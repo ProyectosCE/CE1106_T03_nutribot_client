@@ -1,70 +1,159 @@
-/* Contenedor principal del chat */
-.chat-container {
+/* Estilos generales del contenedor principal */
+.container {
   display: flex;
-  flex-direction: column;
   height: 100vh;
-  max-width: 600px;
-  margin: 0 auto;
-  border: 1px solid #ddd;
-  background-color: #f9f9f9;
-  border-radius: 10px;
-  overflow: hidden;
 }
 
-/* Caja de los mensajes */
-.chat-box {
-  flex: 1;
+/* Menú lateral (sidebar) */
+.sidebar {
+  width: 20%; /* Ahora ocupa el 20% de la pantalla */
+  background-color: #001f3f;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   padding: 20px;
-  overflow-y: auto;
+}
+
+.sidebar-item {
+  margin-bottom: 20px;
+}
+
+.sidebar input {
+  background-color: #222;
+  color: white;
+  border: none;
+  padding: 5px;
+  border-radius: 3px;
+}
+
+.sidebar-footer {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  margin-top: auto;
 }
 
-/* Mensajes del usuario */
+.sidebar-footer button {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #17a2b8;
+  color: white;
+  cursor: pointer;
+}
+
+.sidebar-footer button:hover {
+  background-color: #138496;
+}
+
+/* Caja de chat */
+.chat-container {
+  width: 80%; /* Ahora ocupa el 80% de la pantalla */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #000;
+  color: white;
+}
+
+.chat-box {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Burbujas de chat */
+.message {
+  margin: 10px 0;
+  padding: 15px;
+  border-radius: 10px;
+  display: inline-block;
+  word-wrap: break-word;
+  max-width: 75%;
+  word-break: break-word;
+}
+
 .message.user {
+  background-color: #007bff;
+  color: white;
+  text-align: left;
   align-self: flex-end;
-  background-color: #dcf8c6;
-  padding: 10px;
-  border-radius: 10px;
-  max-width: 80%;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  font-size: 14px;
 }
 
-/* Mensajes del bot */
 .message.bot {
+  background-color: #6c757d;
+  color: white;
+  text-align: left;
   align-self: flex-start;
-  background-color: #f1f0f0;
-  padding: 10px;
-  border-radius: 10px;
-  max-width: 80%;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  font-size: 14px;
 }
 
-/* Caja de entrada de texto */
+/* Caja de entrada */
 .input-box {
   display: flex;
+  align-items: center;
   padding: 10px;
-  border-top: 1px solid #ddd;
-  background-color: white;
+  background-color: #333;
+  border-radius: 10px;
+  margin: 20px;
 }
 
-/* Estilo del input */
-.input-box input {
-  flex: 1;
+textarea {
+  flex-grow: 1;
   padding: 10px;
+  border: none;
   border-radius: 5px;
-  border: 1px solid #ccc;
-  font-size: 14px;
-  margin-right: 10px;
-  outline: none;
+  background-color: #222;
+  color: white;
+  resize: none;
 }
 
-/* Botón de enviar */
-.input-box button {
-  padding: 10px 15px;
+button {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #17a2b8;
+  color: white;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+/* Estilos para la pantalla de ayuda */
+.help-screen, .info-screen {
+  position: fixed;
+  top: 25%; /* Centrado verticalmente */
+  left: 25%; /* Centrado horizontalmente */
+  width: 50%;
+  height: 50%;
+  background-color: #fff;
+  color: #000;
+  border-radius: 10px;
+  padding: 20px;
+  z-index: 1000; /* Asegura que esté por encima de otros elementos */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.help-screen h2, .info-screen h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.help-screen ul, .info-screen ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.help-screen li, .info-screen li {
+  margin-bottom: 10px;
+}
+
+.close-help, .close-info {
+  display: block;
+  margin: 20px auto 0 auto;
+  padding: 10px 20px;
   background-color: #007bff;
   color: white;
   border: none;
@@ -72,54 +161,6 @@
   cursor: pointer;
 }
 
-.input-box button:hover {
+.close-help:hover, .close-info:hover {
   background-color: #0056b3;
-}
-
-/* Añadir un scroll suave */
-.chat-box {
-  scroll-behavior: smooth;
-}
-/* Botón de micrófono */
-.input-box button:nth-child(3) {
-  background-color: #28a745;
-  color: white;
-  border: none;
-  padding: 10px 15px;
-  border-radius: 5px;
-  margin-left: 10px;
-  cursor: pointer;
-}
-
-.input-box button:nth-child(3):hover {
-  background-color: #218838;
-}
-
-/* Mensaje de error */
-.error-message {
-  color: red;
-  margin-top: 10px;
-  text-align: center;
-  font-weight: bold;
-}
-
-/* Toggle de Text-to-Speech */
-.tts-toggle {
-  margin-top: 10px;
-  text-align: center;
-  font-size: 14px;
-}
-
-.tts-toggle label {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-}
-
-.error-message {
-  color: red;
-  margin-top: 10px;
-  text-align: center;
-  font-weight: bold;
 }
