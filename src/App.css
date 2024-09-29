@@ -6,13 +6,14 @@
 
 /* Menú lateral (sidebar) */
 .sidebar {
-  width: 20%; /* Ahora ocupa el 20% de la pantalla */
+  width: 20%; /* Mantiene el 20% de la pantalla */
   background-color: #001f3f;
   color: white;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 20px;
+  padding: 40px; /* Ajuste para mayor tamaño */
+  font-size: 1.5rem; /* Aumento del tamaño de fuente */
 }
 
 .sidebar-item {
@@ -23,24 +24,26 @@
   background-color: #222;
   color: white;
   border: none;
-  padding: 5px;
-  border-radius: 3px;
+  padding: 10px; /* Aumenta el padding proporcionalmente */
+  border-radius: 6px;
+  font-size: 1.5rem; /* Ajuste de tamaño de fuente */
 }
 
 .sidebar-footer {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 20px;
   margin-top: auto;
 }
 
 .sidebar-footer button {
-  padding: 10px;
+  padding: 15px; /* Ajuste de padding */
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
   background-color: #17a2b8;
   color: white;
   cursor: pointer;
+  font-size: 1.5rem; /* Tamaño de texto ajustado */
 }
 
 .sidebar-footer button:hover {
@@ -49,7 +52,7 @@
 
 /* Caja de chat */
 .chat-container {
-  width: 80%; /* Ahora ocupa el 80% de la pantalla */
+  width: 80%; /* Mantiene el 80% de la pantalla */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -60,21 +63,20 @@
 .chat-box {
   flex-grow: 1;
   overflow-y: auto;
-  padding: 20px;
+  padding: 40px; /* Aumento del padding */
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 /* Burbujas de chat */
 .message {
-  margin: 10px 0;
-  padding: 15px;
-  border-radius: 10px;
+  margin: 20px 0;
+  padding: 20px 30px; /* Ajuste de padding */
+  border-radius: 15px; /* Más grande para reflejar el tamaño */
   display: inline-block;
   word-wrap: break-word;
   max-width: 75%;
-  word-break: break-word;
+  font-size: 1.5rem; /* Aumento de la fuente */
 }
 
 .message.user {
@@ -95,50 +97,53 @@
 .input-box {
   display: flex;
   align-items: center;
-  padding: 10px;
+  padding: 20px; /* Aumenta el padding */
   background-color: #333;
-  border-radius: 10px;
-  margin: 20px;
+  border-radius: 15px;
+  margin: 20px; /* Ajuste del margen */
 }
 
 textarea {
   flex-grow: 1;
-  padding: 10px;
+  padding: 15px;
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
   background-color: #222;
   color: white;
   resize: none;
+  font-size: 1.5rem; /* Tamaño de fuente aumentado */
 }
 
 button {
-  padding: 10px;
+  padding: 15px;
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
   background-color: #17a2b8;
   color: white;
   cursor: pointer;
-  margin-left: 10px;
+  margin-left: 15px;
+  font-size: 1.5rem; /* Aumento del tamaño de la fuente */
 }
 
 /* Estilos para la pantalla de ayuda */
 .help-screen, .info-screen {
   position: fixed;
-  top: 25%; /* Centrado verticalmente */
-  left: 25%; /* Centrado horizontalmente */
+  top: 25%;
+  left: 25%;
   width: 50%;
   height: 50%;
   background-color: #fff;
   color: #000;
-  border-radius: 10px;
-  padding: 20px;
-  z-index: 1000; /* Asegura que esté por encima de otros elementos */
+  border-radius: 15px;
+  padding: 40px;
+  z-index: 1000;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .help-screen h2, .info-screen h2 {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
+  font-size: 1.5rem;
 }
 
 .help-screen ul, .info-screen ul {
@@ -147,18 +152,20 @@ button {
 }
 
 .help-screen li, .info-screen li {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
 }
 
 .close-help, .close-info {
   display: block;
-  margin: 20px auto 0 auto;
-  padding: 10px 20px;
+  margin: 40px auto 0 auto;
+  padding: 20px 40px;
   background-color: #007bff;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
   cursor: pointer;
+  font-size: 1.5rem;
 }
 
 .close-help:hover, .close-info:hover {
