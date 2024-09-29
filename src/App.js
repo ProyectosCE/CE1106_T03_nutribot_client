@@ -234,15 +234,11 @@ function App() {
           <h3>Instituto Tecnológico de Costa Rica</h3>
           <h3>Tarea 3 - NutriTec</h3>
           <h4>Paradigmas de Programación (CE1106)</h4>
-          <p>Este programa está bajo MIT License</p>
-          <p>Copyright (c) 2024</p>
+          <p>Este programa está bajo MIT License. Copyright (c) 2024</p>
           <p>Consulta el archivo LICENSE para más detalles.</p>
           <p><strong>Autores:</strong></p>
           <ul>
-            <li>José Bernardo Barquero Bonilla</li>
-            <li>Jose Eduardo Campos Salazar</li>
-            <li>Jimmy Feng Feng</li>
-            <li>Alexander Montero Vargas</li>
+            <li>José Bernardo Barquero Bonilla, Jose Eduardo Campos Salazar, Jimmy Feng Feng,Alexander Montero Vargas </li>
           </ul>
           <button className="close-info" onClick={toggleInfo}>Cerrar Información</button>
         </div>
